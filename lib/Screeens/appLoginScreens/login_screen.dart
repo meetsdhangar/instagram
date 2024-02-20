@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/Screeens/appLoginScreens/forgotpassword_screen.dart';
-import 'package:instagram/Screeens/appLoginScreens/name_screen.dart';
+import 'package:instagram/Screeens/AppLoginScreens/forgotpassword_screen.dart';
+import 'package:instagram/Screeens/AppLoginScreens/name_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class LoginScreen extends StatelessWidget {

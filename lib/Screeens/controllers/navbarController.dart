@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:instagram/Screeens/Chat/outchat.dart';
+import 'package:instagram/Screeens/Search/search_screen.dart';
 import 'package:instagram/Screeens/appLoginScreens/login_screen.dart';
-import 'package:instagram/Screeens/appLoginScreens/password_screen.dart';
+
 import 'package:instagram/Screeens/home/home_screen.dart';
 
 class NavbarController extends GetxController {
@@ -14,9 +16,9 @@ class NavbarController extends GetxController {
   }
 
   var screenList = [
-    LoginScreen(),
     HomeScreen(),
-    PasswordScreen(),
+    SearchScreen(),
+    OutchatScreen(),
     LoginScreen(),
     HomeScreen()
   ];

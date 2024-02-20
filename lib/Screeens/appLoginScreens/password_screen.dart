@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/Screeens/appLoginScreens/logininfo_screen.dart';
+import 'package:instagram/Screeens/AppLoginScreens/logininfo_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class PasswordScreen extends StatelessWidget {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/Screeens/Navigation/navigation_screen.dart';
-import 'package:instagram/Screeens/Search/search_screen.dart';
 
 void main() {
   runApp(const MyApp());

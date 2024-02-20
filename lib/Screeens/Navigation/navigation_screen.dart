@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:instagram/Screeens/controllers/navbarController.dart';
+import 'package:instagram/Screeens/Controllers/navbarController.dart';
 
 class NavigationScren extends StatelessWidget {
   const NavigationScren({super.key});
