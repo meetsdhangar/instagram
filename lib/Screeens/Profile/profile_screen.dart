@@ -27,10 +27,10 @@ class ProfileScreen extends StatelessWidget {
               //   context: context,
               //   builder: (context) =>DraggableScrollableSheet(builder: builder)
               // );
-              showModalBottomSheet(
-                context: context,
-                builder: (context) => bottomsheet(),
-              );
+              // showModalBottomSheet(
+              //   context: context,
+              //   builder: (context) => bottomsheet(),
+              // );
             },
             child: Padding(
               padding: const EdgeInsets.only(right: 15),
