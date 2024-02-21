@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:instagram/Screeens/Chat/chat_screen.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class OutchatScreen extends StatelessWidget {
   const OutchatScreen({super.key});
@@ -8,10 +11,25 @@ class OutchatScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        leading: Icon(Icons.arrow_back),
-        title: Text("meet"),
-        actions: [Icon(Icons.add)],
+        leading:
+            InkWell(onTap: () => Get.back(), child: Icon(Icons.arrow_back)),
+        title: Text("meet_dhangar"),
+        actions: [
+          Image.asset(
+            "assets/images/add.png",
+            height: 30,
+            width: 30,
+          ),
+          25.widthBox,
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: Image.asset(
+              "assets/images/edit.png",
+              height: 25,
+              width: 25,
+            ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -46,17 +64,20 @@ class OutchatScreen extends StatelessWidget {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return ListTile(
-                  contentPadding: EdgeInsets.only(left: 5, right: 5),
-                  leading: CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage(
-                      "assets/images/meet.jpeg",
+                return InkWell(
+                  onTap: () => Get.to(() => ChatScreen()),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.only(left: 5, right: 5),
+                    leading: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage(
+                        "assets/images/meet.jpeg",
+                      ),
                     ),
+                    title: Text("Meet_Dhangar"),
+                    subtitle: Text("Hellow"),
+                    trailing: Icon(Icons.camera_alt),
                   ),
-                  title: Text("Meet_Dhangar"),
-                  subtitle: Text("Hellow"),
-                  trailing: Icon(Icons.camera_alt),
                 );
               },
             )

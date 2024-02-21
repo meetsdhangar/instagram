@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:instagram/Screeens/Chat/chat_screen.dart';
 import 'package:instagram/Screeens/Chat/outchat.dart';
+import 'package:instagram/Screeens/Reels/reels_screen.dart';
 import 'package:instagram/Screeens/Search/search_screen.dart';
-import 'package:instagram/Screeens/appLoginScreens/login_screen.dart';
 
 import 'package:instagram/Screeens/home/home_screen.dart';
+import 'package:instagram/Screeens/Profile/profile_screen.dart';
 
 class NavbarController extends GetxController {
   List<GlobalKey<NavigatorState>> navigatorKeys =
@@ -19,8 +21,8 @@ class NavbarController extends GetxController {
     HomeScreen(),
     SearchScreen(),
     OutchatScreen(),
-    LoginScreen(),
-    HomeScreen()
+    ReelsScreen(),
+    ProfileScreen()
   ];
 
   buildScreenNavigator() {

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:instagram/Screeens/Chat/chat_screen.dart';
 import 'package:instagram/Screeens/Navigation/navigation_screen.dart';
+import 'package:instagram/Screeens/Profile/profile_screen.dart';
+import 'package:instagram/Screeens/Reels/reels_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DismissKeyboard(
-      child: MaterialApp(
+      child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

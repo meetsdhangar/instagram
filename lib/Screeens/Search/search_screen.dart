@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -13,7 +11,7 @@ class SearchScreen extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 15, right: 50, left: 10),
+              padding: const EdgeInsets.only(top: 15, left: 10, right: 10),
               child: TextFormField(
                 showCursor: true,
                 keyboardType: TextInputType.text,
@@ -36,34 +34,6 @@ class SearchScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            Container(
-              height: 70,
-              width: double.infinity,
-              child: ListView.builder(
-                  padding: EdgeInsets.all(0),
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: 5,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Container(
-                        width: 80,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                              width: 2,
-                              color: Colors.black,
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10))),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [Icon(Icons.home), Text("Home")],
-                        ),
-                      ),
-                    );
-                  }),
             ),
             GridView.builder(
               shrinkWrap: true,

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/Screeens/Navigation/navigation_screen.dart';
+import 'package:get/get.dart';
+
+import 'package:instagram/Screeens/Chat/outchat.dart';
+
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,7 +22,24 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         actions: [
-          Icon(Icons.favorite_border),
+          Icon(
+            Icons.favorite_border,
+            size: 30,
+          ),
+          20.widthBox,
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: InkWell(
+              onTap: () {
+                Get.to(() => OutchatScreen());
+              },
+              child: Image.asset(
+                "assets/images/chat.png",
+                height: 25,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -101,7 +121,7 @@ class HomeScreen extends StatelessWidget {
                     Icons.favorite_border,
                     size: 30,
                   ),
-                  10.widthBox,
+                  20.widthBox,
                   Container(
                     height: 25,
                     width: 25,
@@ -110,7 +130,7 @@ class HomeScreen extends StatelessWidget {
                       fit: BoxFit.fill,
                     ),
                   ),
-                  10.widthBox,
+                  20.widthBox,
                   Container(
                     height: 25,
                     width: 25,
@@ -119,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                       fit: BoxFit.fill,
                     ),
                   ),
-                  80.widthBox,
+                  60.widthBox,
                   Container(
                     height: 10,
                     width: 10,
