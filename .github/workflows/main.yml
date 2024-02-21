@@ -8,11 +8,15 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+  issues: write  # Optional: Only if you need issue management
+  # Add other permissions if needed, depending on your workflow requirements
+
 jobs:
   build_and_release:
     name: Build & Release
     runs-on: macos-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
