@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:instagram/Screeens/Profile/editprofile_screen.dart';
 import 'package:instagram/Screeens/Profile/profile_widget.dart';
+
 import 'package:velocity_x/velocity_x.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -10,7 +13,15 @@ class ProfileScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text("Meet_dhangar"),
+        title: InkWell(
+          onTap: () => showModalBottomSheet(
+            context: context,
+            builder: (context) => Addaccbottomsheet(),
+          ),
+          child: Row(
+            children: [Text("Meet_dhangar"), Icon(Icons.expand_more_outlined)],
+          ),
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(left: 10),
@@ -23,10 +34,17 @@ class ProfileScreen extends StatelessWidget {
           20.widthBox,
           InkWell(
             onTap: () {
-              // showBottomSheet(
-              //   context: context,
-              //   builder: (context) =>DraggableScrollableSheet(builder: builder)
-              // );
+              showBottomSheet(
+                context: context,
+                builder: (context) {
+                  return DraggableScrollableSheet(
+                    initialChildSize: 0.8,
+                    minChildSize: 0.2,
+                    builder: (context, scrollController) => bottomsheet(),
+                  );
+                },
+              );
+
               // showModalBottomSheet(
               //   context: context,
               //   builder: (context) => bottomsheet(),
@@ -110,17 +128,20 @@ class ProfileScreen extends StatelessWidget {
             30.heightBox,
             Row(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 223, 223, 223),
-                      borderRadius: BorderRadius.circular(10)),
-                  height: 40,
-                  width: 160,
-                  child: Center(
-                    child: Text(
-                      "Edit profile",
-                      style:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+                InkWell(
+                  onTap: () => Get.to(() => EditProfile()),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 223, 223, 223),
+                        borderRadius: BorderRadius.circular(10)),
+                    height: 40,
+                    width: 160,
+                    child: Center(
+                      child: Text(
+                        "Edit profile",
+                        style: TextStyle(
+                            fontSize: 17, fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                 ),

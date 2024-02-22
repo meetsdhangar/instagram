@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:instagram/Screeens/Chat/chat_screen.dart';
+
 import 'package:instagram/Screeens/Navigation/navigation_screen.dart';
-import 'package:instagram/Screeens/Profile/profile_screen.dart';
-import 'package:instagram/Screeens/Reels/reels_screen.dart';
 
 void main() {
   runApp(const MyApp());

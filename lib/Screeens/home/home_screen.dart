@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:instagram/Screeens/Chat/outchat.dart';
+import 'package:instagram/Screeens/Home/notification_screen.dart';
+import 'package:instagram/Screeens/Home/story_screen.dart';
 
 import 'package:velocity_x/velocity_x.dart';
 
@@ -12,6 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      // backgroundColor: Color.fromARGB(255, 223, 223, 223),
       appBar: AppBar(
         leadingWidth: 120,
         leading: Padding(
@@ -22,9 +25,12 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         actions: [
-          Icon(
-            Icons.favorite_border,
-            size: 30,
+          InkWell(
+            onTap: () => Get.to(() => NotificationScreen()),
+            child: Icon(
+              Icons.favorite_border,
+              size: 30,
+            ),
           ),
           20.widthBox,
           Padding(
@@ -59,11 +65,14 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(5),
                     child: Column(
                       children: [
-                        CircleAvatar(
-                          backgroundImage: AssetImage(
-                            "assets/images/meet.jpeg",
+                        InkWell(
+                          onTap: () => Get.to(() => StoryScreen()),
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage(
+                              "assets/images/meet.jpeg",
+                            ),
+                            radius: 37,
                           ),
-                          radius: 37,
                         ),
                         Text(
                           "abc",
@@ -198,6 +207,98 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                 ),
               ],
+            ),
+            20.heightBox,
+            Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Suggested for you",
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    "See all",
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.blue),
+                  )
+                ],
+              ),
+            ),
+            10.heightBox,
+            Container(
+              color: Color.fromARGB(255, 223, 223, 223),
+              height: 330,
+              child: ListView.builder(
+                itemCount: 5,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding:
+                        const EdgeInsets.only(left: 10, bottom: 10, top: 10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      width: 250,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: Column(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/images/meet.jpeg",
+                              ),
+                              radius: 80,
+                            ),
+                            10.heightBox,
+                            Text(
+                              "Meet_dhangar",
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w500),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 15,
+                                    backgroundImage: AssetImage(
+                                      "assets/images/meet.jpeg",
+                                    ),
+                                  ),
+                                  10.widthBox,
+                                  Text("Followed by Ripal_lad")
+                                ],
+                              ),
+                            ),
+                            15.heightBox,
+                            Container(
+                              height: 40,
+                              width: 230,
+                              decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Center(
+                                child: Text(
+                                  "Follow",
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),
