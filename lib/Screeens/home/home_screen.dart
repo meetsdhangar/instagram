@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:instagram/Screeens/Chat/outchat.dart';
+import 'package:instagram/Screeens/Home/comment_screen.dart';
 import 'package:instagram/Screeens/Home/notification_screen.dart';
+import 'package:instagram/Screeens/Home/share_screen.dart';
 import 'package:instagram/Screeens/Home/story_screen.dart';
 
 import 'package:velocity_x/velocity_x.dart';
@@ -131,21 +133,27 @@ class HomeScreen extends StatelessWidget {
                     size: 30,
                   ),
                   20.widthBox,
-                  Container(
-                    height: 25,
-                    width: 25,
-                    child: Image.asset(
-                      "assets/images/cm.png",
-                      fit: BoxFit.fill,
+                  InkWell(
+                    onTap: () => Get.to(() => CommentsScreen()),
+                    child: Container(
+                      height: 25,
+                      width: 25,
+                      child: Image.asset(
+                        "assets/images/cm.png",
+                        fit: BoxFit.fill,
+                      ),
                     ),
                   ),
                   20.widthBox,
-                  Container(
-                    height: 25,
-                    width: 25,
-                    child: Image.asset(
-                      "assets/images/share.png",
-                      fit: BoxFit.fill,
+                  InkWell(
+                    onTap: () => Get.to(() => ShareScreen()),
+                    child: Container(
+                      height: 25,
+                      width: 25,
+                      child: Image.asset(
+                        "assets/images/share.png",
+                        fit: BoxFit.fill,
+                      ),
                     ),
                   ),
                   60.widthBox,
